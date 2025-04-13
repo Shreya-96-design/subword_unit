@@ -29,16 +29,15 @@ def assess_json_files(folders):
                         print(f"Error reading file: {file_path} - Error: {e}")
                     
 
-# Example usage
-folders_to_assess = [
-    '/Users/shreyagupta/Downloads/american_english/',
-    '/Users/shreyagupta/Downloads/other_english/'
+assess_folders = [
+    '/Users/shreyagupta/Downloads/subword_unit/american_english/',
+    '/Users/shreyagupta/Downloads/subword_unit/other_english/'
 ]
 
-assess_json_files(folders_to_assess)
+assess_json_files(assess_folders)
 
 
-def extract_subword_data(folders):
+def extract_sub_word_data(folders):
     records = []  # to store extracted data
     for folder in folders:
         for root, _, files in os.walk(folder):
@@ -86,7 +85,7 @@ def extract_subword_data(folders):
 
 
 # Extract data into a DataFrame
-df = extract_subword_data(folders_to_assess)
+df = extract_sub_word_data(assess_folders)
 
 # Display the first few rows of the DataFrame
 print("DF shape:", df.shape)
